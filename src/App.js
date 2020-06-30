@@ -1,11 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { Home } from './pages/Home'
-import { About } from './pages/About';
-import { Profile } from './pages/Profile';
-import { Alert } from './components/Alert';
-import { AlertState } from './context/alert/AlertState';
+import { About } from './pages/About'
+import { Profile } from './pages/Profile'
+import { Alert } from './components/Alert'
+import { AlertState } from './context/alert/AlertState'
 import { GithubState } from './context/github/githubState';
 
 
@@ -15,8 +15,8 @@ function App() {
       <AlertState>
         <BrowserRouter>
           <Navbar />
-          <div className="container pt-5">
-            <Alert alert={{ text: "test" }} />
+          <div className="container pt-4">
+            <Alert alert={{ text: 'Test alert' }} />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" component={About} />
@@ -26,7 +26,7 @@ function App() {
         </BrowserRouter>
       </AlertState>
     </GithubState>
-  )
+  );
 }
 
 export default App;
