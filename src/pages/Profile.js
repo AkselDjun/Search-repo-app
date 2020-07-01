@@ -25,7 +25,7 @@ export const Profile = ({ match }) => {
     public_gists
   } = user
 
-  console.log(repos)
+  console.log(user)
 
   return (
     <Fragment>
@@ -38,10 +38,11 @@ export const Profile = ({ match }) => {
               <img
                 src={avatar_url}
                 alt={name}
-                style={{ width: '150px' }}
+                className="rounded"
+                style={{ width: '200px' }}
               />
               <h1>{name}</h1>
-              {location && <p>Location: {location}</p>}
+              {location && <p><strong><i class="fa fa-map-marker" aria-hidden="true"></i> Location: </strong> {location}</p>}
             </div>
             <div className="col">
               {
@@ -56,30 +57,36 @@ export const Profile = ({ match }) => {
                 rel="noopener noreferrer"
                 className="btn btn-dark m-1"
               >Open profile</a>
-              <ul className="m-3">
+              <ul className="m-3 list-unstyled">
                 {login && <li>
-                  <strong>Username: </strong> {login}
+                  <strong><i class="fa fa-user-o" aria-hidden="true"></i> Username: </strong> {login}
                 </li>}
 
                 {company && <li>
-                  <strong>Company: </strong> {company}
+                  <strong><i class="fa fa-building-o" aria-hidden="true"></i> Company: </strong> {company}
                 </li>}
 
                 {blog && <li>
-                  <strong>Website: </strong> {blog}
+                  <strong><i class="fa fa-globe" aria-hidden="true"></i> Website: </strong> {blog}
                 </li>}
               </ul>
 
-              <div className="badge badge-primary m-1">Followers: {followers}</div>
-              <div className="badge badge-success m-1">Following: {following}</div>
-              <div className="badge badge-info m-1">Perository: {public_repos}</div>
-              <div className="badge badge-dark m-1">Gists: {public_gists}</div>
+              <div className="mt-3">
+                <div className="badge badge-primary m-1">Followers: {followers}</div>
+                <div className="badge badge-success m-1">Following: {following}</div>
+                <div className="badge badge-info m-1">Perository: {public_repos}</div>
+                <div className="badge badge-secondary m-1">Gists: {public_gists}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <Repos repos={repos} />
+      <hr style={{ "backgroundColor": "#007bff", "height": "1px" }} />
+
+      <div className="mt-4">
+        <Repos repos={repos} />
+      </div>
     </Fragment>
   )
 }

@@ -11,16 +11,16 @@ export const Repos = ({ repos }) => (
               href={repo.html_url}
               rel="noopener noreferrer"
               target="_blank"
-            >{repo.name}</a>
+            ><i class="fa fa-book text-muted mr-2" aria-hidden="true"></i>{repo.name}</a>
           </h4>
-          <div className="row">
-            <i className="fa fa-code-fork col-md-0 ml-md-auto" aria-hidden="true">  {repo.forks}</i>
-            <i className="fa fa-eye ml-4 col-auto" aria-hidden="true">  {repo.watchers}</i>
+          <div className="row float-right mr-1">
+            <i className="fa fa-code-fork" aria-hidden="true"> {repo.forks}</i>
+            <i className="fa fa-eye ml-3" aria-hidden="true"> {repo.watchers}</i>
           </div>
-
-          <p className="m-1"><strong>Language: </strong>{repo.language}</p>
+          <p className="m-2">{repo.description}</p>
+          <p className="m-2"><strong>Language: </strong>{repo.language}</p>
         </div>
-      </div >
+      </div>
     ))}
-  </React.Fragment >
+  </React.Fragment>
 )
