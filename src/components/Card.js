@@ -1,12 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export const Card = ({user}) => (
+export const Card = ({ user }) => (
   <div className="card">
-    <img src={user.avatar_url} alt={user.login} className="card-img-top" />
+    <img src={user.avatar_url} alt={user.login} className="card-img-top p-1" />
     <div className="card-body">
       <h5 className="card-title">{user.login}</h5>
-      <Link to={'/profile/' + user.login} className="btn btn-primary">Открыть</Link>
+      <Link to={'/profile/' + user.login} className="btn btn-primary">Open</Link>
     </div>
   </div>
 )
