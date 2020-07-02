@@ -25,11 +25,9 @@ export const Profile = ({ match }) => {
     public_gists
   } = user
 
-  console.log(user)
-
   return (
     <Fragment>
-      <Link to="/" className="btn btn-link">Go home</Link>
+      <Link to="/" exact className="btn btn-link">Go home</Link>
 
       <div className="card mb-4">
         <div className="card-body">
@@ -57,12 +55,12 @@ export const Profile = ({ match }) => {
                 rel="noopener noreferrer"
                 className="btn btn-dark m-1"
               >Open profile</a>
-              <ul className="m-3 list-unstyled">
-                {login && <li>
+              <ul className="m-3 mt-4 list-unstyled">
+                {login && <li className="mb-1">
                   <strong><i class="fa fa-user-o" aria-hidden="true"></i> Username: </strong> {login}
                 </li>}
 
-                {company && <li>
+                {company && <li className="mb-1">
                   <strong><i class="fa fa-building-o" aria-hidden="true"></i> Company: </strong> {company}
                 </li>}
 
@@ -71,11 +69,11 @@ export const Profile = ({ match }) => {
                 </li>}
               </ul>
 
-              <div className="mt-3">
-                <div className="badge badge-primary m-1">Followers: {followers}</div>
-                <div className="badge badge-success m-1">Following: {following}</div>
-                <div className="badge badge-info m-1">Perository: {public_repos}</div>
-                <div className="badge badge-secondary m-1">Gists: {public_gists}</div>
+              <div className="mt-4">
+                <div className="badge badge-primary m-1 pt-1 pb-1">Followers: {followers}</div>
+                <div className="badge badge-success m-1 pt-1 pb-1">Following: {following}</div>
+                <div className="badge badge-info m-1 pt-1 pb-1">Perository: {public_repos}</div>
+                <div className="badge badge-secondary m-1 pt-1 pb-1">Gists: {public_gists}</div>
               </div>
             </div>
           </div>
