@@ -50,7 +50,7 @@ export const Profile = ({ match }) => {
                 </Fragment>
               }
               <a
-                href={html_url}
+                href={html_url}u
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-dark m-1"
